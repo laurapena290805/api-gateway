@@ -40,7 +40,7 @@ jobs:
 
       - name: Actualizar manifiesto de Kubernetes
         run: |
-          sed -i "s|image: .*|image: $IMAGE_NAME|" k8s/deployment.yaml
+          sed -i "s|image: .*|image: $IMAGE_NAME|" kubernetes/deployment.yaml
 
       - name: Commit automático al manifiesto
         uses: stefanzweifel/git-auto-commit-action@v5
