@@ -7,7 +7,7 @@ on:
       - develop
 
 env:
-  IMAGE_NAME: juanjohernan/imagenes:gateway
+  IMAGE_NAME: juanjoher/imagenes:gateway
   REGISTRY: docker.io
 
 jobs:
