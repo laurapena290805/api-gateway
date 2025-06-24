@@ -14,11 +14,11 @@ public class CorsConfig {
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Arrays.asList("http://localhost:5173"));  // aquí va el front
-        corsConfig.setMaxAge(8000L);
-        corsConfig.addAllowedMethod("*");
-        corsConfig.addAllowedHeader("*");
-        corsConfig.setAllowCredentials(true); // para cookies y auth
+        corsConfig.setAllowedOrigins(Arrays.asList("http://localhost:5173")); // Cambia según tu frontend
+        corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+        corsConfig.setAllowCredentials(true); // Importante para cookies y JWT
+        corsConfig.setExposedHeaders(Arrays.asList("Authorization")); // Permite leer el token en el frontend
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfig);
